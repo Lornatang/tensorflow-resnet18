@@ -116,3 +116,5 @@ dmypy.json
 
 # My workdir
 .idea/
+*.tfrecords
+.DS_Store
