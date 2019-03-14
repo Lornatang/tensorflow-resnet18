@@ -28,15 +28,5 @@ def create_tfrecords(path, name):
     writer.close()
 
 
-def read_example():
-    for serialized_example in tf.python_io.tf_record_iterator("train.tfrecords"):
-        example = tf.train.Example()
-        example.ParseFromString(serialized_example)
-
-        label = example.features.feature['label'].int64_list.value
-        print(label)
-
-
 create_tfrecords(path="/train/", name="train.tfrecords")
 create_tfrecords(path="/val/", name="val.tfrecords")
-# read_example()
